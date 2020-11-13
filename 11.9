@@ -125,10 +125,11 @@ mode = int(input("Enter 1 to add by username or 2 to add by ID: "))
  
 n = 0
  
-for user in users[540:]:
+for user in users:
     n += 1
     if n % 20 == 0:
-        time.sleep(180)
+        time.sleep(60)
+        print ('waiting for 1 minute to avoid flooding')
     try:
         print ("Adding {}".format(user['id']))
         if mode == 1:
