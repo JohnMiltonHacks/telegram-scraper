@@ -2,10 +2,10 @@
 # telegram-scraper 11.9 by JohnMiltonHacks
 
 # • TO GENERATE API
-       Go to http://my.telegram.org and log in.
-       click on API development tools and enter your phone number.
-       Insert name 'Telegram' in the field of app tile and short name. 
-       Copy "api_id" & "api_hash" after clicking create app
+   Go to http://my.telegram.org and log in.
+   click on API development tools .
+    Insert name 'Telegram' in the field of app tile and short name. 
+    Copy "api_id" & "api_hash" after clicking create app
 
 # • How To Install and Use
        $ pkg install git
