@@ -8,10 +8,11 @@
     Copy "api_id" & "api_hash" after clicking create app
 
 # • How To Install and Use
-       $ pkg install git
-       $ pkg install python
-       $ git clone https://github.com/JohnMiltonHacks/telegram-scraper
-       $ python 11.9
+    $ pkg install git
+    $ pkg install python
+    $ git clone https://github.com/JohnMiltonHacks/telegram-scraper
+    $ cd telegram-scraper
+    $ python 11.9
    • now enter the api_id and api_hash and your phone number in the format +(country code)xxxxxxxxxxx
    • now enter the received login code from the telegram
    • now select the group to scrape member
