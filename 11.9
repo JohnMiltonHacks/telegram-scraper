@@ -121,7 +121,7 @@ target_group=groups[int(g_index)]
  
 target_group_entity = InputPeerChannel(target_group.id,target_group.access_hash)
  
-mode = int(input("Enter 1 to add by username or 2 to add by ID: "))
+mode = 1
  
 n = 0
  
@@ -136,8 +136,6 @@ for user in users:
             if user['username'] == "":
                 continue
             user_to_add = client.get_input_entity(user['username'])
-        elif mode == 2:
-            user_to_add = InputPeerUser(user['id'], user['access_hash'])
         else:
             sys.exit("Invalid Mode Selected. Please Try Again.")
         client(InviteToChannelRequest(target_group_entity,[user_to_add]))
