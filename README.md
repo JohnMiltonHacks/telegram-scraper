@@ -9,6 +9,7 @@
 
 # • How To Install and Use
     $ pkg install git
+    $ pkg install telethon
     $ pkg install python
     $ git clone https://github.com/JohnMiltonHacks/telegram-scraper
     $ cd telegram-scraper
