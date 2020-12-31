@@ -11,6 +11,7 @@
     $ pkg install git
     $ pkg install python3
     $ pip install telethon
+    $ pip install Telethon --upgrade telethon
     $ git clone https://github.com/JohnMiltonHacks/telegram-scraper
     $ cd telegram-scraper
     $ python3 11.9.py
