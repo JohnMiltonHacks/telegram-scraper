@@ -19,5 +19,4 @@
    • now enter the received login code from the telegram
    • now select the group to scrape member
    • now select the group to add member
-   • and then select option 1 for adding members by username and 2 for adding members by user id
 # • ❤ENJOY❤
