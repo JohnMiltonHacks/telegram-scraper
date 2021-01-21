@@ -20,3 +20,15 @@
    • now select the group to scrape members
    • now select the group to add members
 # • ❤ENJOY❤
+
+# WHATS NEW :
+    
+Stable version 1
+Features added:
+         >colorful theme
+         >skip existing users
+         >skip bots
+         >optimized performance
+2021.1 for single client
+
+The version 2021.2 is ongoing for multi client........
