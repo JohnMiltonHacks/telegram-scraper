@@ -1,8 +1,8 @@
 
-# telegram-scraper 11.9 by JohnMiltonHacks
+# telegram-scraper 2021.1 by JohnMiltonHacks
 
 # • TO GENERATE API
-   Go to http://my.telegram.org and log in.
+   Go to https://my.telegram.org and log in.
    click on API development tools .
     Insert name 'Telegram' in the field of app tile and short name. 
     Copy "api_id" & "api_hash" after clicking create app
