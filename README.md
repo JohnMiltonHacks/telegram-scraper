@@ -14,7 +14,7 @@
     $ pip install Telethon --upgrade telethon
     $ git clone https://github.com/JohnMiltonHacks/telegram-scraper
     $ cd telegram-scraper
-    $ python3 11.9.py
+    $ python3 2021.1.py
    • now enter the api_id and api_hash and your phone number in the format +(country code)xxxxxxxxxxx
    • now enter the received login code from the telegram
    • now select the group to scrape members
