@@ -9,12 +9,14 @@
 
 # • How To Install and Use
     $ pkg install git
-    $ pkg install python3
+    $ pkg install python
     $ pip install telethon
     $ pip install Telethon --upgrade telethon
     $ git clone https://github.com/JohnMiltonHacks/telegram-scraper
     $ cd telegram-scraper
+    $ python3 2021.2.py
     $ python3 2021.1.py
+   ° 2021.2 version is for multi client one who having multiple api and phone numbers(this version still in developement)
    • now enter the api_id and api_hash and your phone number in the format +(country code)xxxxxxxxxxx
    • now enter the received login code from the telegram
    • now select the group to scrape members
@@ -31,4 +33,4 @@ Features added:
          >optimized performance
 2021.1 for single client
 
-The version 2021.2 is ongoing for multi client........
+Use version 2(beta)for multi client.
