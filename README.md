@@ -1,5 +1,5 @@
 
-# telegram-scraper 2021.1 by JohnMilton
+# telegram-scraper 2021 by JohnMilton
 
 # • TO GENERATE API
    Go to https://my.telegram.org and log in.
