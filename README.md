@@ -8,9 +8,8 @@
     Copy "api_id" & "api_hash" after clicking create app
 
 # • How To Install and Use
-    $ pkg install git
-    $ pkg install python
-    $ pip install telethon
+    $ pkg install git --upgrade git
+    $ pkg install python --upgrade python
     $ pip install Telethon --upgrade telethon
     $ git clone https://github.com/JohnMiltonHacks/telegram-scraper
     $ cd telegram-scraper
