@@ -13,6 +13,8 @@
     $ pip install Telethon --upgrade telethon
     $ git clone https://github.com/JohnMiltonHacks/telegram-scraper
     $ cd telegram-scraper
+    $ python3 sim.py
+           Or
     $ python3 2021.2.py
            Or
     $ python3 2021.1.py
