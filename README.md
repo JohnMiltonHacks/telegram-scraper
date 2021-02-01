@@ -25,7 +25,7 @@
 
 # WHATS NEW :
     
-Stable version latest sim(single,multiclient combined) updated
+Stable version latest sim(single,multiclient combined) updated!
 Stable version 1
 Features added:
          >colorful theme
