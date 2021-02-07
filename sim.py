@@ -44,7 +44,7 @@ if os.path.isfile('multi_log.txt'):
     print(a+"                (y/n)            ")
     xc=input(c+" Do u want to continue the last session ? ")
     if xc=='y':
-        cy=input("Do u want to add still more client ? ")
+        cy=input("Do u want to add still more telegram accounts with this scraper ? ")
         if cy=='y':
             ospath()
         else:
@@ -174,8 +174,8 @@ for s in range(v):
         n += 1
         if n % 20 == 0:
             info()
-            print (y+' waiting for 1 minute to avoid flooding....')
-            time.sleep(60)
+            print (y+' waiting for 10 seconds to avoid flooding....')
+            time.sleep(10)
         elif q>= 9:
             client.disconnect()
             if x<v:
@@ -196,11 +196,10 @@ for s in range(v):
             print(a+'User already present,skipping...')
             with open(input_file, encoding='UTF-8') as f:
                 rows = csv.reader(f,delimiter=",",lineterminator="\n")
-                next(rows, None)
                 for row in rows:
-                    for field in row:
-                        if field == user['id']:
-                            lines.remove(row)
+                    if user['id'] in row:
+                        lines.remove(row)
+                        
             time.sleep(1)
             continue
         try:
@@ -213,11 +212,9 @@ for s in range(v):
             print("Waiting for 2-4 Seconds...")
             with open(input_file, encoding='UTF-8') as f:
                 rows = csv.reader(f,delimiter=",",lineterminator="\n")
-                next(rows, None)
                 for row in rows:
-                    for field in row:
-                        if field == user['id']:
-                            lines.remove(row)
+                    if user['id'] in row:
+                        lines.remove(row)
             with open(input_file, 'w') as f:
                 writer = csv.writer(f)
                 writer.writerows(lines)
@@ -230,41 +227,33 @@ for s in range(v):
             print(r+' The user\'s privacy settings do not allow you to do this. Skipping.')
             with open(input_file, encoding='UTF-8') as f:
                 rows = csv.reader(f,delimiter=",",lineterminator="\n")
-                next(rows, None)
                 for row in rows:
-                    for field in row:
-                        if field == user['id']:
-                            lines.remove(row)
+                    if user['id'] in row:
+                        lines.remove(row)
             time.sleep(1)
         except UserBotError:
             print(r+' Can\'t add Bot. Skipping...')
             with open(input_file, encoding='UTF-8') as f:
                 rows = csv.reader(f,delimiter=",",lineterminator="\n")
-                next(rows, None)
                 for row in rows:
-                    for field in row:
-                        if field == user['id']:
-                            lines.remove(row)
+                    if user['id'] in row:
+                        lines.remove(row)
 
         except InputUserDeactivatedError:
             print(r+' The specified user was deleted. Skipping...')
             with open(input_file, encoding='UTF-8') as f:
                 rows = csv.reader(f,delimiter=",",lineterminator="\n")
-                next(rows, None)
                 for row in rows:
-                    for field in row:
-                        if field == user['id']:
-                            lines.remove(row)
+                    if user['id'] in row:
+                        lines.remove(row)
             time.sleep(1)
         except UserChannelsTooMuchError:
             print(r+' User in too much channel. Skipping.')
             with open(input_file, encoding='UTF-8') as f:
                 rows = csv.reader(f,delimiter=",",lineterminator="\n")
-                next(rows, None)
                 for row in rows:
-                    for field in row:
-                        if field == user['id']:
-                            lines.remove(row)
+                    if user['id'] in row:
+                        lines.remove(row)
             time.sleep(1)
         except UserNotMutualContactError:
             print(r+' Mutual No. Skipped.')
