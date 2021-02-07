@@ -193,7 +193,7 @@ for s in range(v):
                 time.sleep(1)
                 sys.exit()
         if user['id'] in my_participants_id:
-            print(a+'User already present,skipping...')
+            print(a+' User already present,skipping...')
             n-=1
             with open(input_file, encoding='UTF-8') as f:
                 rows = csv.reader(f,delimiter=",",lineterminator="\n")
@@ -210,7 +210,7 @@ for s in range(v):
                     continue
             user_to_add = client.get_input_entity(user['username'])
             client(InviteToChannelRequest(target_group_entity,[user_to_add]))
-            print("Waiting for 2-4 Seconds...")
+            print(" Waiting for 2-4 Seconds...")
             with open(input_file, encoding='UTF-8') as f:
                 rows = csv.reader(f,delimiter=",",lineterminator="\n")
                 for row in rows:
