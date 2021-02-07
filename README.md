@@ -11,6 +11,7 @@
     $ pkg install git --upgrade git
     $ pkg install python --upgrade python
     $ pip install Telethon --upgrade telethon
+    $ rm -rf telegram-scraper
     $ git clone https://github.com/JohnMiltonHacks/telegram-scraper
     $ cd telegram-scraper
     $ python3 sim.py
