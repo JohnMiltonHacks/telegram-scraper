@@ -14,11 +14,7 @@
     $ git clone https://github.com/JohnMiltonHacks/telegram-scraper
     $ cd telegram-scraper
     $ python3 sim.py
-           Or
-    $ python3 2021.2.py
-           Or
-    $ python3 2021.1.py
-   ° 2021.2 version is for multi client one who having multiple api and phone numbers(this version still in developement, you are beta tester for this version🤗)
+   ° sim version is for multi client one who having multiple api and phone numbers(this version still in developement, you are beta tester for this version🤗)
    • now enter the api_id and api_hash and your phone number in the format +(country code)xxxxxxxxxxx
    • now enter the received login code from the telegram
    • now select the group to scrape members
@@ -34,10 +30,6 @@ Features added:
          >skip existing users
          >skip bots
          >optimized performance
-2021.1 for single client
-
-Use version 2(beta)for multi client.
-
 
 
 *key words : member adder for telegram group channel fetch members *
