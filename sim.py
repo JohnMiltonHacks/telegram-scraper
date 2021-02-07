@@ -194,6 +194,7 @@ for s in range(v):
                 sys.exit()
         if user['id'] in my_participants_id:
             print(a+'User already present,skipping...')
+            n-=1
             with open(input_file, encoding='UTF-8') as f:
                 rows = csv.reader(f,delimiter=",",lineterminator="\n")
                 for row in rows:
