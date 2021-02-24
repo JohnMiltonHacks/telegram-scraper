@@ -1,4 +1,4 @@
-from telethon import TelegramClient, events, sync
+from telethon import TelegramClient, events, sync,utils
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.functions.messages import GetDialogsRequest
 from telethon.tl.types import InputPeerEmpty, InputPeerChannel, InputPeerUser
@@ -15,11 +15,19 @@ m="\u001b[35;1m"
 c="\u001b[36;1m"
 clear = lambda:os.system('clear')
 inf = (y+'T'+a+'E'+b+'L'+y+'E'+m+'G'+c+'R'+r+'A'+y+'M'+'  '+y+'S'+a+'C'+b+'R'+y+'A'+m+'P'+c+'E'+r+'R'+y+'  '+'2'+y+'0'+a+'2'+b+'1'+y+'  '+m+'B'+c+'Y'+r+'  '+y+'J'+'O'+y+'H'+a+'N'+b+'  '+y+'M'+m+'I'+c+'L'+r+'T'+y+'O'+'N')
+el=0
+def Sleep(timE):
+    try:
+        time.sleep(timE)
+    except KeyboardInterrupt:
+        print(r+" KeyboardInterrupt , ........")
 def info():
-    clear()
+    print("")
+    print("")
     print(inf)
     print("")
     print("")
+clear()
 info()
 def ospath():
     o=int(input(b+" How many telegram accounts do you have ? : "))
@@ -37,20 +45,21 @@ def ospath():
             f.write(api_id+'\n'+api_hash+'\n')
         client = TelegramClient("JohnMilton{}".format(z), api_id, api_hash)
         client.start()
-        time.sleep(1)
+        Sleep(1)
+        clear()
         info()
         client.disconnect()
 if os.path.isfile('multi_log.txt'):
-    print(a+"                (y/n)            ")
-    xc=input(c+" Do u want to continue the last session ? ")
+    print(a+"                (y/n)            \n")
+    xc=input(b+" Do u want to continue the last session ? ")
     if xc=='y':
-        cy=input("Do u want to add still more telegram accounts with this scraper ? ")
+        cy=input(" want to add more accounts ? ")
         if cy=='y':
             ospath()
         else:
             pass
     else:
-        cv=input("Do u want to remove the last session ? ")
+        cv=input(" Do u want to remove the last session ? ")
         if cv=='y':
             with open('multi_log.txt', 'r') as f:
                 data = f.readlines()
@@ -61,29 +70,35 @@ if os.path.isfile('multi_log.txt'):
                 sys.exit(1)
             elif con=='y':
                 print(r+ " Now deleting files related to last session")
-                time.sleep(1)
+                Sleep(1)
                 for d in range(v-1):
                     os.remove("JohnMilton{}.session".format(d))
-                os.remove('multi_log.txt')
+                os.remove('multi_log.txt')          
             ospath()
         else:
             sys.exit()
-
 else:
     ospath()
 
+clear()
+info()
+x=1
+inh=2
+t=0
 with open('multi_log.txt', 'r') as f:
     data = f.readlines()
 v=int((len(data))/2)
-t=0
-api_id = data[t]
-api_hash = data[t+1]
-client = TelegramClient("JohnMilton{}".format(t), api_id, api_hash)
-client.start()
-t+=2
-info()
-x=1
-for s in range(v):
+for s in range(v+1):
+    api_id = data[t]
+    api_hash = data[t+1]
+    print(a+ ' \nTrying... to connect to the Account {} \n'.format(x)+y+ ' \n api {}= '.format(x) +m+ api_id +'\n' +y+ ' api hash {} = '.format(x) +m+ api_hash)
+    Sleep(1)
+    client = TelegramClient("JohnMilton{}".format(t), api_id, api_hash)
+    client.start()
+    name=utils.get_display_name(client.get_me())
+    print(a+" \n\n  ❤Successfully connected as {}❤\n\n".format(name))
+    t+=2
+    lines=[]
     chats = []
     last_date = None
     chunk_size = 200
@@ -102,16 +117,16 @@ for s in range(v):
                 groups.append(chat)
         except:
             continue
-    print(b+' Choose a group/channel to scrape members from:')
+    print(b+' Choose a group to scrape members from:')
     i=0
     for g in groups:
         print(m+str(i) +y+ ' - '+a + g.title)
         i+=1
     g_index = input(b+' Enter a number (or press ENTER to skip): ')
-    if g_index == '' :
+    if g_index == '' or " " :
         info()
         print(m+" Ok. skipping...")
-        time.sleep(1)
+        Sleep(1)
     else:
         info()
         target_group=groups[int(g_index)]
@@ -119,7 +134,7 @@ for s in range(v):
         all_participants = []
         all_participants = client.get_participants(target_group, aggressive=True)
         print(y+' Saving In file...')
-        with open("Members.csv","a",encoding='UTF-8') as f:
+        with open("Members.csv","w",encoding='UTF-8') as f:
             writer=csv.writer(f,delimiter=",",lineterminator="\n")
             for user in all_participants:
                 if user.username:
@@ -137,22 +152,19 @@ for s in range(v):
                 name= (first_name + ' ' + last_name).strip()
                 writer.writerow([username,user.id,user.access_hash,name,target_group.title, target_group.id])
         print(a+' Members scraped successfully.')
-        time.sleep(1)
+        Sleep(1)
     info()
-    print(b+'Choose a group/channel to add members:')
+    print(b+'Choose a group to add members:')
     i=0
     for group in groups:
         print(m+str(i) +y+ ' - ' +a+ group.title)
         i+=1
-
     g_index = input(b+' Enter a Number: ')
     if g_index=='':
-        print(m+" U 've pressed Enter,Now exiting...")
-        sys.exit()
-    input_file = "Members.csv"
-    users = []
-    lines = []
-    with open(input_file, encoding='UTF-8') as f:
+        print(m+" \n U 've pressed Enter,Now exiting...")
+        sys.exit()  
+    users = []  
+    with open('Members.csv', encoding='UTF-8') as f:
         rows = csv.reader(f,delimiter=",",lineterminator="\n")
         for row in rows:
             lines.append(row)
@@ -171,99 +183,127 @@ for s in range(v):
     info()
     n,q=0,0
     for user in users:
+        usR=str(user['id'])
         n += 1
         if n % 20 == 0:
             info()
             print (y+' waiting for 10 seconds to avoid flooding....')
-            time.sleep(10)
+            Sleep(10)  
         elif q>= 9:
             client.disconnect()
-            if x<v:
-                print(a+" now changing client...")
-                api_id = data[t]
-                api_hash = data[t+1]
-                client = TelegramClient("JohnMilton{}".format(x), api_id, api_hash)
-                client.start()
-                info()
-                t+=2
+            if x<v:             
                 x+=1
+                inh+=1
                 break
             else:
                 print(b+" No more clients found.Now exiting..")
-                time.sleep(1)
+                Sleep(1)
                 sys.exit()
         if user['id'] in my_participants_id:
             print(a+' User already present,skipping...')
             n-=1
-            with open(input_file, encoding='UTF-8') as f:
-                rows = csv.reader(f,delimiter=",",lineterminator="\n")
-                for row in rows:
-                    if user['id'] in row:
-                        lines.remove(row)
-                        
-            time.sleep(1)
+            with open('Members.csv', 'r',encoding='UTF-8') as f:
+                dat = csv.reader(f,delimiter=",",lineterminator="\n")
+                for tad in dat:
+                    if usR in tad:
+                        lines.remove(tad)
+                        break
+            Sleep(1)       
             continue
-        try:
-            print (a+' Adding {}'.format(user['name']))
-            if True :
-                if user['username'] == "":
-                    continue
-            user_to_add = client.get_input_entity(user['username'])
-            client(InviteToChannelRequest(target_group_entity,[user_to_add]))
-            print(" Waiting for 2-4 Seconds...")
-            with open(input_file, encoding='UTF-8') as f:
-                rows = csv.reader(f,delimiter=",",lineterminator="\n")
-                for row in rows:
-                    if user['id'] in row:
-                        lines.remove(row)
-            with open(input_file, 'w') as f:
-                writer = csv.writer(f)
-                writer.writerows(lines)
-            time.sleep(random.randrange(2,4))
-        except PeerFloodError:
-            print(r+' Getting Flood Error from telegram. Script is stopping now. Please try again after some time.')
-            time.sleep(1)
-            q+= 1
-        except UserPrivacyRestrictedError:
-            print(r+' The user\'s privacy settings do not allow you to do this. Skipping.')
-            with open(input_file, encoding='UTF-8') as f:
-                rows = csv.reader(f,delimiter=",",lineterminator="\n")
-                for row in rows:
-                    if user['id'] in row:
-                        lines.remove(row)
-            time.sleep(1)
-        except UserBotError:
-            print(r+' Can\'t add Bot. Skipping...')
-            with open(input_file, encoding='UTF-8') as f:
-                rows = csv.reader(f,delimiter=",",lineterminator="\n")
-                for row in rows:
-                    if user['id'] in row:
-                        lines.remove(row)
-
-        except InputUserDeactivatedError:
-            print(r+' The specified user was deleted. Skipping...')
-            with open(input_file, encoding='UTF-8') as f:
-                rows = csv.reader(f,delimiter=",",lineterminator="\n")
-                for row in rows:
-                    if user['id'] in row:
-                        lines.remove(row)
-            time.sleep(1)
-        except UserChannelsTooMuchError:
-            print(r+' User in too much channel. Skipping.')
-            with open(input_file, encoding='UTF-8') as f:
-                rows = csv.reader(f,delimiter=",",lineterminator="\n")
-                for row in rows:
-                    if user['id'] in row:
-                        lines.remove(row)
-            time.sleep(1)
-        except UserNotMutualContactError:
-            print(r+' Mutual No. Skipped.')
-            time.sleep(1)
-        except Exception as e:
-            print(r+' Error:', e)
-            print('Trying to continue...')
-            q += 1
-            time.sleep(1)
-            continue
-
-
+        else:
+            try:
+                print (a+' Adding {}'.format(user['name']))
+                if True :
+                    if user['username'] == "":
+                        continue
+                user_to_add = client.get_input_entity(user['username'])
+                client(InviteToChannelRequest(target_group_entity,[user_to_add]))
+                print(m+" Waiting for 2-4 Seconds...")
+                with open('Members.csv', 'r',encoding='UTF-8') as f:
+                    dat = csv.reader(f,delimiter=",",lineterminator="\n")
+                    for tad in dat:
+                        if usR in tad:
+                            lines.remove(tad)
+                            break
+                with open("Members.csv","w",encoding='UTF-8') as f:
+                    writer=csv.writer(f,delimiter=",",lineterminator="\n")
+                    for line in lines:
+                        writer.writerow(line)        
+                             
+                time.sleep(random.randrange(2,4))
+                
+                q=0
+            except PeerFloodError:
+                print(r+' Getting Flood Error from telegram. Script is stopping now. Please try again after some time.')
+                Sleep(1)
+                q+= 1
+            except UserPrivacyRestrictedError:
+                print(r+' The user\'s privacy settings do not allow you to do this. Skipping.')
+                with open('Members.csv', 'r',encoding='UTF-8') as f:
+                    dat = csv.reader(f,delimiter=",",lineterminator="\n")
+                    for tad in dat:
+                        if usR in tad:
+                            lines.remove(tad)
+                            break
+                Sleep(1)
+            except UserBotError:
+                print(r+' Can\'t add Bot. Skipping...')
+                with open('Members.csv', 'r',encoding='UTF-8') as f:
+                    dat = csv.reader(f,delimiter=",",lineterminator="\n")
+                    for tad in dat:
+                        if usR in tad:
+                            lines.remove(tad)
+                            break    
+            except InputUserDeactivatedError:
+                print(r+' The specified user was deleted. Skipping...')
+                with open('Members.csv', 'r',encoding='UTF-8') as f:
+                    dat = csv.reader(f,delimiter=",",lineterminator="\n")
+                    for tad in dat:
+                        if usR in tad:
+                            lines.remove(tad)
+                            break
+                Sleep(1)
+            except UserChannelsTooMuchError:
+                print(r+' User in too much channel. Skipping.')
+                with open('Members.csv', 'r',encoding='UTF-8') as f:
+                    dat = csv.reader(f,delimiter=",",lineterminator="\n")
+                    for tad in dat:
+                        if usR in tad:
+                            lines.remove(tad)
+                            break
+                Sleep(1)
+            except UserNotMutualContactError:
+                print(r+' Mutual No. Skipped.')
+                with open('Members.csv', 'r',encoding='UTF-8') as f:
+                    dat = csv.reader(f,delimiter=",",lineterminator="\n")
+                    for tad in dat:
+                        if usR in tad:
+                            lines.remove(tad)
+                            break
+                Sleep(1)
+            except KeyboardInterrupt:
+                i=0
+                kst=["stop","continue","switch to next account"]
+                for ks in kst:
+                    print('\n'+m+ str(i) +y+ ' - ' +a+ ks)
+                    i+=1
+                keyb=int(input(y+" Enter a number : "))
+                if keyb==1:
+                    print(a+" Ok continuing...")
+                    Sleep(1)
+                elif keyb==0:
+                    print(y+" Now Exiting...")
+                    sys.exit(1)
+                else:
+                    print(a+ " \n\nSwitching... to next account\n\n")
+                    x+=1
+                    break                
+            except Exception as e:
+                print(r+' Error:', e)
+                print('Trying to continue...')
+                q += 1
+                Sleep(1)
+                continue
+    
+    
+    
