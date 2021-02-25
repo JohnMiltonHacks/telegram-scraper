@@ -123,7 +123,7 @@ for s in range(v+1):
         print(m+str(i) +y+ ' - '+a + g.title)
         i+=1
     g_index = input(b+' Enter a number (or press ENTER to skip): ')
-    if g_index == '' or " " :
+    if g_index == '' :
         info()
         print(m+" Ok. skipping...")
         Sleep(1)
