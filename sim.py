@@ -82,7 +82,7 @@ else:
 
 clear()
 info()
-x=1
+x=0
 inh=2
 t=0
 with open('multi_log.txt', 'r') as f:
@@ -91,9 +91,9 @@ v=int((len(data))/2)
 for s in range(v+1):
     api_id = data[t]
     api_hash = data[t+1]
-    print(a+ ' \nTrying... to connect to the Account {} \n'.format(x)+y+ ' \n api {}= '.format(x) +m+ api_id +'\n' +y+ ' api hash {} = '.format(x) +m+ api_hash)
+    print(a+ ' \nTrying... to connect to the Account {} \n'.format(x+1)+y+ ' \n api {}= '.format(x+1) +m+ api_id +'\n' +y+ ' api hash {} = '.format(x+1) +m+ api_hash)
     Sleep(1)
-    client = TelegramClient("JohnMilton{}".format(t), api_id, api_hash)
+    client = TelegramClient("JohnMilton{}".format(x), api_id, api_hash)
     client.start()
     name=utils.get_display_name(client.get_me())
     print(a+" \n\n  ❤Successfully connected as {}❤\n\n".format(name))
@@ -113,7 +113,7 @@ for s in range(v+1):
     chats.extend(result.chats)
     for chat in chats:
         try:
-            if True:
+            if chat.megagroup==True:
                 groups.append(chat)
         except:
             continue
