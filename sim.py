@@ -35,7 +35,7 @@ def ospath():
         if os.path.isfile('multi_log.txt'):
             with open('multi_log.txt', 'r') as f:
                 data = f.readlines()
-            v=int(((len(data))/2))
+            v=int(len(data)/2)
             z=v
         else:
             z=0
@@ -50,23 +50,22 @@ def ospath():
         info()
         client.disconnect()
 if os.path.isfile('multi_log.txt'):
-    print(a+"                (y/n)            \n")
-    xc=input(b+" Do u want to continue the last session ? ")
+    xc=input(b+" Do u want to continue the last session "+a+" (y/n) ? ")
     if xc=='y':
-        cy=input(" want to add more accounts ? ")
+        cy=input(" want to add more accounts "+a+" (y/n) ? ")
         if cy=='y':
             ospath()
         else:
             pass
     else:
-        cv=input(" Do u want to remove the last session ? ")
+        cv=input(" Do u want to remove the last session "+a+" (y/n) ? ")
         if cv=='y':
             with open('multi_log.txt', 'r') as f:
                 data = f.readlines()
             v=int((len(data))/2)
-            con=input(r+" Are you sure to permanently delete all files related to last session ? ")
-            if con=='':
-                print(m+" U 've pressed Enter,Now exiting..."+'\n'+a+"No files were deleted ! ")
+            con=input(r+" Are you sure to permanently delete all files related to last session "+a+" (y/n) ? ")
+            if con in ['', 'n']:
+                print(m+" Now exiting..."+'\n'+a+"No files were deleted ! ")
                 sys.exit(1)
             elif con=='y':
                 print(r+ " Now deleting files related to last session")
@@ -87,7 +86,7 @@ inh=2
 t=0
 with open('multi_log.txt', 'r') as f:
     data = f.readlines()
-v=int((len(data))/2)
+v=int(len(data)/2)
 for s in range(v+1):
     api_id = data[t]
     api_hash = data[t+1]
