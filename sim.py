@@ -87,7 +87,7 @@ t=0
 with open('multi_log.txt', 'r') as f:
     data = f.readlines()
 v=int(len(data)/2)
-for s in range(v+1):
+for s in range(v):
     api_id = data[t]
     api_hash = data[t+1]
     print(a+ ' \nTrying... to connect to the Account {} \n'.format(x+1)+y+ ' \n api {}= '.format(x+1) +m+ api_id +'\n' +y+ ' api hash {} = '.format(x+1) +m+ api_hash)
