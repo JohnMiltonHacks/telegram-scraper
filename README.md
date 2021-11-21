@@ -9,7 +9,7 @@
 
 # • How To Install and Use
    •Install termux and copy paste these 👇 codings and press enter
-## cd ~/ && pkg install && pkg install git --upgrade git && pkg install python --upgrade python && pip install Telethon --upgrade telethon && rm -rf telegram-scraper && git clone https://github.com/JohnMiltonHacks/telegram-scraper && cd telegram-scraper && python3 sim.py
+## cd ~/ && pkg install && pkg install git --upgrade git && pkg install python --upgrade python && pip install Telethon --upgrade telethon && rm -rf telegram-scraper && git clone https://github.com/JohnMiltonHacks/telegram-scraper && cd telegram-scraper && python3 sm.py
    ° sim version is for multi client one who having multiple api and phone numbers(this version still in developement, you are beta tester for this version🤗)
    • now enter the api_id and api_hash and your phone number in the format +(country code)xxxxxxxxxxx
    • now enter the received login code from the telegram
