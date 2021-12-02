@@ -5,7 +5,7 @@
 
    Go to https://my.telegram.org and log in.
    click on API development tools .
-    Insert name 'Telegram' in the field of app tile and short name. 
+    Insert name 'Telegram' in the field of app title and short name. 
     Copy "api_id" & "api_hash" after clicking create app
 #
 **• How To Install and Use**
