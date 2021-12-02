@@ -8,7 +8,7 @@
     Insert name 'Telegram' in the field of app title and short name. 
     Copy "api_id" & "api_hash" after clicking create app
 #
-**• How To Install and Use**
+**• HOW TO INSTALL AND USE**
 
    •Install termux and copy paste these 👇 codings and press enter
 ```
@@ -21,7 +21,7 @@
  cd telegram-scraper && python3 sm.py
 ```
 #
- **Video tutorial :-**
+ **VIDEO TUTORIAL :-**
 
  https://youtu.be/yUUzmikQSy4
 #
