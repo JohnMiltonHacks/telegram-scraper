@@ -18,7 +18,8 @@
  pip install Telethon --upgrade telethon && 
  rm -rf telegram-scraper && 
  git clone https://github.com/JohnMiltonHacks/telegram-scraper && 
- cd telegram-scraper && python3 sm.py
+ cd telegram-scraper && 
+ python3 sm.py
 ```
 #
  **VIDEO TUTORIAL :-**
