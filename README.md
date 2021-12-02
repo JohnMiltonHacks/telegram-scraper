@@ -14,8 +14,8 @@
 ```
  cd ~/ && pkg install && 
  pkg install git --upgrade git &&
- pkg install python --upgrade python &&
- pip install Telethon --upgrade telethon && 
+ pkg install python3 --upgrade python &&
+ python3 -m pip install Telethon --upgrade telethon && 
  rm -rf telegram-scraper && 
  git clone https://github.com/JohnMiltonHacks/telegram-scraper && 
  cd telegram-scraper && 
