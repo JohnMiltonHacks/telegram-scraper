@@ -131,7 +131,7 @@ for s in range(v):
         target_group=groups[int(g_index)]
         print(y+' Fetching Members...')
         all_participants = []
-        all_participants = client.get_participants(target_group, aggressive=True)
+        all_participants = client.get_participants(target_group)
         print(y+' Saving In file...')
         with open("Members.csv","w",encoding='UTF-8') as f:
             writer=csv.writer(f,delimiter=",",lineterminator="\n")
