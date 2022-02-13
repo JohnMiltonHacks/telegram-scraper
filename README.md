@@ -19,7 +19,7 @@
  rm -rf telegram-scraper && 
  git clone https://github.com/JohnMiltonHacks/telegram-scraper && 
  cd telegram-scraper && 
- python3 sm.py
+ python3 sim.py
 ```
 #
  **VIDEO TUTORIAL :-**
