@@ -44,7 +44,7 @@ py -m pip install Telethon --upgrade telethon & rmdir /q /s telegram-scraper & g
 **WHAT'S NEW :**
     
 - Stable version
-    + sim.py -> single, Multiple client combined
+    + sim.py -> Single, Multiple Client Combined
       
 - Features added:
 <br>      + colorful theme
