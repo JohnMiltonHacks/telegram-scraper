@@ -10,7 +10,7 @@
 #
 **• HOW TO INSTALL AND USE**
 
-   •Install termux and copy paste these 👇 codings and press enter
+   • For Android -> Install termux, For Linux based Devices == copy paste these 👇 codings and press enter
 ```
  cd ~/ && pkg install && 
  pkg install git --upgrade git &&
@@ -21,6 +21,13 @@
  cd telegram-scraper && 
  python3 sim.py
 ```
+
+ • For Windows == copy paste these 👇 codings in command Prompt and press enter
+ 
+ ```
+py -m pip install Telethon --upgrade telethon & rmdir /q /s telegram-scraper & git clone https://github.com/JohnMiltonHacks/telegram-scraper & cd telegram-scraper & py sim.py
+```
+
 #
  **VIDEO TUTORIAL :-**
 
