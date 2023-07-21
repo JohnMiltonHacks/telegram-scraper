@@ -6,14 +6,16 @@ from telethon.errors.rpcerrorlist import (PeerFloodError, UserNotMutualContactEr
                                           UserPrivacyRestrictedError, UserChannelsTooMuchError,
                                           UserBotError, InputUserDeactivatedError)
 from telethon.tl.functions.channels import InviteToChannelRequest
-import time,os,random,csv,sys
+import time,os,random,csv,sys,platform
 r= "\u001b[31;1m"
 a= "\u001b[32m"
 y = "\u001b[33;1m"
 b="\u001b[34;1m"
 m="\u001b[35;1m"
 c="\u001b[36;1m"
-clear = lambda:os.system('clear')
+def clear():
+    x = "cls" if platform.system()=='Windows' else 'clear'
+    os.system(x)
 inf = (y+'T'+a+'E'+b+'L'+y+'E'+m+'G'+c+'R'+r+'A'+y+'M'+'  '+y+'S'+a+'C'+b+'R'+y+'A'+m+'P'+c+'E'+r+'R'+y+'  '+'2'+y+'0'+a+'2'+b+'1'+y+'  '+m+'B'+c+'Y'+r+'  '+y+'J'+'O'+y+'H'+a+'N'+b+'  '+y+'M'+m+'I'+c+'L'+r+'T'+y+'O'+'N')
 el=0
 def Sleep(timE):
