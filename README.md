@@ -39,17 +39,20 @@ py -m pip install Telethon --upgrade telethon & rmdir /q /s telegram-scraper & g
    • now select the group to scrape members
    • now select the group to add members
 #
-**• ❤ENJOY❤**
+*• ❤ENJOY❤*
 #
 **WHAT'S NEW :**
     
-Stable version latest sim(single,multiclient combined) updated!
-Stable version 1
-Features added:
-         >colorful theme
-         >skip existing users
-         >skip bots
-         >optimized performance
+- Stable version
+    + sim.py -> single, Multiple client combined
+      
+- Features added:
+         + colorful theme
+         + skip existing users
+         + skip bots
+         + optimized performance
+  
+- Added Support for Windows
 
 # 
 *key words : member adder for telegram group channel fetch members *
