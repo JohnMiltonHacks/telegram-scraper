@@ -47,10 +47,10 @@ py -m pip install Telethon --upgrade telethon & rmdir /q /s telegram-scraper & g
     + sim.py -> single, Multiple client combined
       
 - Features added:
-         + colorful theme
-         + skip existing users
-         + skip bots
-         + optimized performance
+      + colorful theme
+      + skip existing users
+      + skip bots
+      + optimized performance
   
 - Added Support for Windows
 
